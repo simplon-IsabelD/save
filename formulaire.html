@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>un formulaire dans une page HTML</title>
+		<meta charset="utf-8 />
+	</head>
+	<body>
+<?php
+
+//chaine de conexion 
+try
+
+{
+
+    $pdo = new PDO('mysql:host=localhost;dbname=transactions', 'root', 'test');
+
+}
+
+catch(Exception $e)
+
+{
+
+    echo 'Echec de la connexion la base de donnees';
+
+    exit();
+
+}
+
+?>		
+		<form>
+			<p>Formulaire d'inscription</p>
+			<form action="/ma page de traitement.php" method="post">
+			<p class="titre">Contact</P>
+			<fieldset id="Contact">
+  			</fieldset>			
+			
+				<p id="civilite"><label>Civilite : </label><br />
+					<input type="radio" name="Civilite" value="M"./>M.
+					<input type="radio" name="Civilite" value="Mme"/>Mme
+				</p><br />
+				
+				<div>
+					<label for="nom">Nom :</label>
+					<input type="text" id="nom" name="user_nom" size="30" /><br />
+				</div>
+				<div>
+					<label for="prenom">Prenom :</label>
+					<input type="text" id="prenom" name="user_prenom" size="30"/><br />
+				</div>
+				<div>
+					<label for="adresse">Adresse :</label>
+					<input type="text" id="adresse" size="30"/><br />
+				</div>
+				<div>
+					<label for="courriel">Courriel :</label>
+					<input type="email" id="courriel" name="user_email" size="30"/><br />
+				</div>
+				<div>
+					<label for="message">Message :</label>
+					<input type="text" id="message" name="user_message" size="30" rows="5" cols="40/><br />
+				</div>
+				<div class="button">
+					<button type="submit" padding-left: 90px; />Envoyer votre message</button>
+				</div>
+		
+		</form>
+
+	</body>
+
+</html>
